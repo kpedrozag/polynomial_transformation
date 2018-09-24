@@ -13,11 +13,7 @@ def polynomial_feature(degree):
 
     if degree >= 2:
         for i in range(1, degree):
-            aux = np.array(0)
-            for value in X:
-                aux = np.append(aux, np.power(value, i+1))
-            aux = np.delete(aux, 0)
-            changes.append(aux)
+            changes.append(np.power(X, i+1))
         for i in changes:
             X = np.c_[X, i]
     X = np.c_[np.ones(dataSet.shape[0]), X]
@@ -27,5 +23,8 @@ def polynomial_feature(degree):
 
     y_train = dataSet[:sixty, 1]
     y_test = dataSet[sixty:, 1]
+    
+    
+    
 
     return x_train, x_test, y_train, y_test
