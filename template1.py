@@ -31,6 +31,8 @@ def main():
         x1 = x1[:, 1:]
         x2 = x2[:, 1:]
         
+        #print(test)
+        
         plot(x1, hx1)
         plot(x2, hx2)
         
