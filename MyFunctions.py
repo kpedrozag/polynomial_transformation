@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-
+# funcion que calcula el Error Cuadrático Medio
+# y retorna ademas un array de predicciones
 def mse(theta, data_x, data_y):
     val = 0
     data_hx = []
@@ -15,7 +15,8 @@ def mse(theta, data_x, data_y):
     val = (val / data_y.shape[0])
     return val, np.array(data_hx)
 
-
+# Funcion que realiza el calculo del vector Theta 
+# con base en la formula de Ecuaciones Normales
 def regression(x, y):
     X = np.matrix(x)
     Y = np.matrix(y)
@@ -36,7 +37,7 @@ def get_values():
     y = dataSet[:, 1]
     return y
 
-
+"""
 def show_vector(vector):
     for j in range(vector.shape[0]):
         if j != 0:
@@ -45,8 +46,8 @@ def show_vector(vector):
             print(str(vector[j]), end=' ')
         if j+1 != vector.shape[0]:
             print('+', end=' ')
-
-
+"""
+# Grafica de las predicciones
 def plot(X, y):
     plt.plot(X, y, "b.")
     plt.axis([-3, 3, 0, 10])
